@@ -3,20 +3,22 @@ import { BrowserRouter } from 'react-router-dom'
 
 import Header from './shared/Header';
 import Main from './shared/Main';
-import Footer from './shared/Footer';
+// import Footer from './shared/Footer';
 
 import './App.css';
 
-class App extends Component {
+class Layout extends Component {
   render() {
     return (
-      <div>
-      <Header />
-      <Main />
-      {/* <Footer /> */}
+      <BrowserRouter>
+      <div>        
+          <Header />
+          <Main />
+          {/* <Footer /> */}
       </div>
+      </BrowserRouter>
     );
   }
 }
 
-export default App;
+export default Layout;
