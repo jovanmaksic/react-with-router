@@ -2,9 +2,15 @@ import React, { Component } from 'react';
 import { Link } from "react-router-dom";
 
 export default class Header extends Component {
+
+    navigate(){
+        console.log(this.props);
+    }
+
     render(){
-        return(
+        return(            
             <nav className="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+                {this.props.children}
                 <div className="container">
                 Start Bootstrap
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -25,6 +31,9 @@ export default class Header extends Component {
                     </li>
                     <li className="nav-item">
                         <Link className="nav-link" to="/contact" >Contact</Link>
+                    </li>
+                    <li className="nav-item">
+                       <button className="btn btn-danger" onClick={this.navigate.bind(this)}>console log</button>
                     </li>
                     </ul>
                 </div>
