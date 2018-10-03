@@ -10,13 +10,15 @@ import './App.css';
 class Layout extends Component {
   render() {
     return (
-      <BrowserRouter>
-      <div>        
-          <Header />
-          <Main />
-          {/* <Footer /> */}
+      <div>
+        <BrowserRouter>
+          <div>
+            <Header />
+            <Main />
+            {/* <Footer /> */}
+          </div>
+        </BrowserRouter>
       </div>
-      </BrowserRouter>
     );
   }
 }
