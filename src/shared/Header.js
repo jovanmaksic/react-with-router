@@ -29,7 +29,7 @@ export default class Header extends Component {
                     <div className={toggleClass} id="navbarResponsive">
                     <ul className="navbar-nav ml-auto">
                     <li className="nav-item">
-                        <NavLink exact className="nav-link" to="/" activeClassName="active">Home</NavLink>
+                        <NavLink exact className="nav-link" to="/" activeClassName="active">Tods</NavLink>
                     </li>
                     <li className="nav-item">
                         <NavLink className="nav-link" to="/about" activeClassName="active" >About</NavLink>

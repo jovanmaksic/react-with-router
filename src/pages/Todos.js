@@ -1,12 +1,39 @@
-import React, { Component } from 'react';
-import Featured from "./Featured";
+import React from 'react';
 
-export default class Home extends Component {
-    render() {
+import Todo from "../shared/Todo";
+import TodoStore from "../stores/TodoStore";
+
+
+
+export default class Todos extends React.Component {
+    constructor(){
+        super();
+        this.state= {
+            todos: TodoStore.getAll(),            
+        }
+    }
+
+    componentWillMount() {
+        TodoStore.on("change", () =>{
+            this.setState({
+                todos: TodoStore.getAll(),
+            })
+        })
+    }
+
+    render() {        
+        const { todos } = this.state;
+        console.log(todos);
+        const TodoComponenets = todos.map((todo) =>{
+            return <Todo key={todo.id} {...todo}/>;
+        })
+
+
+
         return (
             <div>                
-                <h1 className="mt-5">Home</h1>
-                <Featured /> 
+                <h1 className="mt-5">Todo List</h1>
+                <ul>{TodoComponenets}</ul>
             </div>
         )
     }
